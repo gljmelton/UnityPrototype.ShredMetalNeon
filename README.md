@@ -5,4 +5,5 @@ ___________________________________
 
 This was going to be a game where you played a gun that could jump around, flip, and propel yourself through the air with recoil.
 
-![gif](https://i.imgur.com/bRJOgYA.gif)
+![](https://github.com/gljmelton/UnityPrototype.ShredMetalNeon/blob/master/healthAndAmmo.gif?raw=true)
+![](https://github.com/gljmelton/UnityPrototype.ShredMetalNeon/blob/master/More%20gameplay.gif?raw=true)
