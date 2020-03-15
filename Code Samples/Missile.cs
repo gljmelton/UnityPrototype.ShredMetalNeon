@@ -15,18 +15,15 @@ public class Missile : MonoBehaviour {
     public float explosionForce;
     public AnimationCurve damageFalloff;
 
-    private bool inPlayerRange;
+
 
     //Components
     public Health health;
-    private CameraTarget lookTarget;
     private Projectile projectile;
 
 	// Use this for initialization
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-
-        lookTarget = GetComponent<CameraTarget>();
 
         health = GetComponent<Health>();
         health.onDeath += OnDeath;
@@ -43,18 +40,6 @@ public class Missile : MonoBehaviour {
 	}
 
     void Update() {
-
-        //Check to see how far away this projectile is from the player. If they're within range add them to the camera target.
-        float distanceToPlayer = Vector3.Distance(GameData.playerCharacter.transform.position, gameObject.transform.position);
-
-        if (!inPlayerRange && distanceToPlayer <= lookTarget.maxPlayerDistance) {
-            CameraLookTarget.instance.AddObject(lookTarget);
-            inPlayerRange = true;
-        }
-        else if (inPlayerRange && distanceToPlayer > lookTarget.maxPlayerDistance) {
-            CameraLookTarget.instance.RemoveObject(lookTarget);
-            inPlayerRange = false;
-        }
 
         projectile.Move(GameData.playerCharacter.transform.position);
         
