@@ -68,6 +68,8 @@ The damage falloff curve is used for the explosion when the missile dies. It tak
 
 The attributes section has a few toggles and options for how the projectile should act. The idea here was to have one script that could create a wide variet of projectiles, from lobbed grenades, homing missiles, flak cannons and more. This is also set up in a way where you could have a projectile that shoots projectiles, like a slow homing missile that shoots bullets at the player.
 
+## The Camera
+
 Another big component that leveraged Unity's Cinemachine plugin was my camera tracking code. Looking at the gifs above you can see that the camera moves to not only focus on the player but any enemies within range. I used a weighted average system, where the player has a higher priority than enemies, to control a point in space that the camera follows. Any objects that are tracked by the player have a self contained camera tracking script. This script evaluates how far it is from the player and if it's within a range it adds itself to CameraLookTarget.
 
 ```C#
